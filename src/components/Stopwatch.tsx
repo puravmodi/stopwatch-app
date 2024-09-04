@@ -37,14 +37,14 @@ function Stopwatch() {
 
   return (
     <div className="flex items-center justify-center h-[100vh] bg-gradient-to-br from-sky-500 to-teal-300">
-      <div className="flex flex-col justify-between w-80 h-80 lg:h-96 text-center border border-gray-300 rounded-lg p-6 relative bg-white shadow-md">
+      <div className="flex flex-col justify-between w-80 h-80 lg:h-96 text-center border border-gray-300 rounded-lg p-6 bg-white shadow-md">
         <h1 className="text-xl font-bold text-center text-gray-600">
           Stopwatch - Solvative Demo
         </h1>
-        <p className="text-center font-bold text-2xl md:text-4xl xl:text-5xl text-gray-900">
+        <p className="text-center font-bold text-2xl md:text-4xl xl:text-5xl mt-10 text-gray-900">
           {formatTime(time)}
         </p>
-        <div className="flex gap-4 items-center justify-center absolute bottom-4">
+        <div className="flex gap-4 items-center justify-center">
           <Button variant="primary" onClick={handleStartPause}>
             {isRunning ? "Pause" : "Start"}
           </Button>
