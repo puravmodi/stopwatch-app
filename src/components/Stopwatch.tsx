@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Button from "./Button";
 
 function Stopwatch() {
@@ -26,14 +26,14 @@ function Stopwatch() {
       .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
   };
 
-  const handleStartPause = () => {
+  const handleStartPause = useCallback(() => {
     setIsRunning((prevIsRunning) => !prevIsRunning);
-  };
+  },[]);
 
-  const handleStop = () => {
+  const handleStop = useCallback(() => {
     setIsRunning(false);
     setTime(0);
-  };
+  },[]);
 
   return (
     <div className="flex items-center justify-center h-[100vh] bg-gradient-to-br from-sky-500 to-teal-300">
